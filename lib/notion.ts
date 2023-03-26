@@ -27,7 +27,7 @@ export const getBlocks = async (blockId) => {
   // Fetches all child blocks recursively - be mindful of rate limits if you have large amounts of nested blocks
   // See https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
   const childBlocks = results.map(async (block) => {
-    if (block.has_children) {
+    if (block['has_children']) {
       const children = await getBlocks(block.id);
       return { ...block, children };
     }
