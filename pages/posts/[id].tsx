@@ -208,7 +208,7 @@ export default function Post({ page, blocks }) {
   return (
     <div>
       <Head>
-        <title>{page.properties.Name.title[0].plain_text}</title>
+        <title>{page.properties.Name.title[0].plain_text} | phigasui's blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
