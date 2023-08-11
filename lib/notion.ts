@@ -8,7 +8,8 @@ export const getDatabase = async (databaseId) => {
   const response = await notion.databases.query({
     database_id: databaseId,
   });
-  return response.results;
+
+  return selectPublished(response.results);
 };
 
 export const getPage = async (pageId) => {
@@ -63,6 +64,10 @@ export const getBlocks = async (blockId) => {
     }, []);
   });
 };
+
+function selectPublished(posts) {
+  return posts.filter(post => post['properties']['Status']['status']['name'] === 'publish')
+}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
