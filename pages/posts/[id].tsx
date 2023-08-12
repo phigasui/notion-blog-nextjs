@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Head from "next/head";
+import { Head } from '../../components/Head'
 import { getDatabase, getPage, getBlocks } from "../../lib/notion";
 import Link from "next/link";
 import { databaseId } from "../index";
@@ -207,10 +207,7 @@ export default function Post({ page, blocks }) {
   }
   return (
     <div>
-      <Head>
-        <title>{page.properties.Name.title[0].plain_text} | phigasui's blog</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head title={page.properties.Name.title[0].plain_text} />
 
       <article className={styles.container}>
         <h1 className={styles.name}>

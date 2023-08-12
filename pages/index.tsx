@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { Head } from '../components/Head'
 import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import { Text } from "./posts/[id]";
@@ -9,10 +9,7 @@ export const databaseId = process.env.NOTION_DATABASE_ID;
 export default function Home({ posts }) {
   return (
     <div>
-      <Head>
-        <title>phigasui's blog</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head />
 
       <main className={styles.container}>
         <header className={styles.header}>
